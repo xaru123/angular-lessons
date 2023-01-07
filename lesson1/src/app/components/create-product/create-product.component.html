@@ -1,0 +1,17 @@
+<form class="text-center" [formGroup]="form" (ngSubmit)="submit()">
+  <input
+      type="text"
+      class="border w-full py-2 px-4 mb-2"
+      placeholder="Type..."
+      formControlName="title"
+      appFocus
+  >
+  <p
+      *ngIf="title.errors?.minlength && title.touched"
+      class="text-red-600 font-medium mb-2"
+  > You need type more the 6 chars </p>
+  <button
+      type="submit"
+      class="py-2 px-4 bg-blue-600 text-white">Create
+  </button>
+</form>
